@@ -1,4 +1,4 @@
-const URL = 'http://localhost:3000/carrito/'
+const URL = 'https://senntshop.herokuapp.com/carrito/'
 
 class UI{
 

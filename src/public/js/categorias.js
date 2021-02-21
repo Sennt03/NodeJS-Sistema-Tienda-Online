@@ -1,4 +1,4 @@
-const URL = 'http://localhost:3000/categoria/'
+const URL = 'https://senntshop.herokuapp.com/categoria/'
 
 // CLASES
 class UI{
