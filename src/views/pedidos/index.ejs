@@ -1,0 +1,40 @@
+<%- include('../partials/head1') %>
+    <link rel="stylesheet" href="/css/pedidos.css">
+<%- include('../partials/head2') %>
+
+<section id="confirm-pedido">
+    <form action="pedido/pedir" method="POST">
+        <h2>Direccion del pedido</h2>
+        <%- include('../partials/message') %>
+        <div class="i-input">
+            <i style="color: #4d4d4e;" class="fas fa-boxes"></i>
+            <input disabled type="text" placeholder="Productos: <%= total %>">
+        </div>
+        
+        <div class="i-input">
+            <i style="color: #4d4d4e;" class="fas fa-dollar-sign"></i>
+            <input disabled type="text" placeholder="Costo Total: $<%= costo_total %>">
+        </div>
+
+        <div class="i-input">
+            <i style="color: #251d71;" class="fas fa-globe-americas"></i>
+            <input type="text" name="provincia" placeholder="Provincia">
+        </div>
+    
+        <div class="i-input">
+            <i style="color: #251d71;" class="fas fa-building"></i>
+            <input type="text" name="ciudad" placeholder="Ciudad">
+        </div>
+    
+        <div class="i-input">
+            <i style="color: #d01c1c;" class="fas fa-route"></i>
+            <input type="text" name="direccion" placeholder="Direccion">
+        </div>
+        
+        <input type="submit" value="Confirmar compra">
+    
+        <a href="/carrito">Cancelar</a>
+    </form>
+</section>
+
+<%- include('../partials/footer') %>

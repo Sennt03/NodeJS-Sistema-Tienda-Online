@@ -1,0 +1,21 @@
+<% if(ok.length > 0){ %>
+    <div id="ok" class="alert ok" role="alert">
+        <strong><%= ok %></strong>
+    </div>
+    <script>
+        setTimeout(() => {
+            document.getElementById('ok').style.display = 'none'
+        }, 6000)
+   </script>
+<% } %>
+
+<% if(err.length > 0){ %>
+    <div id="err" class="alert err" role="alert">
+        <strong><%= err %></strong>
+    </div>
+    <script>
+        setTimeout(() => {
+            document.getElementById('err').style.display = 'none'
+        }, 6000)
+   </script>
+<% } %>

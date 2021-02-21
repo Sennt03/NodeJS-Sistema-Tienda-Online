@@ -1,0 +1,26 @@
+<%- include('../partials/head1') %>
+<link rel="stylesheet" href="/css/productos.css">
+<style>.header{ height: 150px; }</style>
+<%- include('../partials/head2') %>
+
+<% if(producto){ %>
+    <div class="div-detalles">
+        <div class="img">
+            <img src="<%= producto.imagen %>" alt="<%= producto.name %>">
+        </div>
+        <div class="detalles">
+            <h2><%= producto.name %></h2>
+            <p class="descripcion"><%= producto.descripcion %></p>
+            <div class="mini-detalles">
+                <p>Precio: $<%= producto.precio %></p>
+                <p>Categoria: <%= producto.categoria %></p>
+            </div>
+            <p id="add-carrito" _id="<%= producto.id %>" class="btn-carrito"><i _id="<%= producto.id %>" class="fas fa-cart-plus"></i></p>
+        </div>
+    </div>
+<% }else{ %>
+    <h2>El producto no existe</h2>
+<% } %>
+
+<script src="/js/carrito.js"></script>
+<%- include('../partials/footer') %>

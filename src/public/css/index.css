@@ -1,0 +1,103 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* GENERAL */
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.alert{
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.err{
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}
+
+.ok{
+    color: #24a228;
+    background-color: #94f9a6;
+    border-color: #6ffd74;
+}
+
+/* HEADER */
+
+.header{
+    background: #0F2027;
+    background: -webkit-linear-gradient(to right, #2c5364ab, #203a438e, #0f2027ab);
+    background: linear-gradient(to right, #2c5364ab, #203a438e, #0f2027ab), url(/img/fondo4.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 150px;
+}
+
+.title-header{
+    padding: 20px;
+    color: #f2f2f2;
+    font-size: 35px;
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+.title-header span{
+    color: #e09408;
+}
+
+.cuenta-carrito{
+    display: flex;
+    width: 100%;
+    color: #ffffff;
+    justify-content: space-evenly;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+}
+
+.cuenta-carrito h3{
+    padding: 5px;
+}
+
+
+.d-relative{
+    position: relative;
+}
+
+.white{
+    color: #f2f2f2;
+}
+
+.cuenta-carrito .d-relative div{
+    position: absolute;
+    min-width: 25px;
+    top: -6px;
+    left: -5px;
+    background: #ff0000ba;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    font-size: 20px;
+    padding: 1px;
+}
+
+
+@media(min-width: 1024px){
+    .title-header{
+        margin-left: 10vw;
+    }
+}

@@ -1,0 +1,68 @@
+<%- include('partials/head1') %>
+<link rel="stylesheet" href="/css/cuenta.css">
+<%- include('partials/head2') %>
+
+<div style="margin: 10px auto;">
+    <%- include('partials/message') %>
+</div>
+<main class="container">
+    <div class="cuenta">
+        <div class="div-mis-pedidos">
+            <h3>Mis pedidos</h3>
+            <% if(pedidos.length > 0){ %>
+                <h4 style="text-align: center; padding: 10px; width: 70%; margin: 0 auto;">Para confirmar la compra deposita al numero de cuenta XXXX e inmediatamente te enviaremos los productos. !Muchas gracias¡</h4>
+            <% } %>
+            <% if(pedidos.length > 0){ %>
+                <% pedidos.forEach(pedido => { %>
+                    <div class="mis-pedidos">
+                        <h4>Cantidad</h4>
+                        <h4>Costo</h4>
+                        <h4>Fecha</h4>
+                        <h4>Estado</h4>
+                        <a class="mb-3" href="/pedido/detalle/<%= pedido.id %>">
+                            <p><%= pedido.cantidad_productos %></p>
+                        </a>
+                        <a class="mb-3" href="/pedido/detalle/<%= pedido.id %>">
+                            <p>$<%= pedido.costo %></p>
+                        </a>
+                        <a class="mb-3" href="/pedido/detalle/<%= pedido.id %>">
+                            <p class="mb-3"><%= pedido.fecha %></p>
+                        </a>
+                        <a class="mb-3" href="/pedido/detalle/<%= pedido.id %>">
+                            <p class="mb-3"><%= pedido.estado %></p>
+                        </a>
+                    </div> 
+                <% }); %>
+            <% }else{ %>
+                <p>No tienes pedidos pendientes</p>
+            <% } %>
+        </div>
+        <div class="detalles">
+            <h4>Detalles</h4>
+            <!-- <img src="https://ui-avatars.com/api/?name=David+Ruiz" alt="Img Usuario"> -->
+            <p><%= user.name %> <%= user.apellido %></p>
+            <p><%= user.email %></p>
+            <div class="btns">
+                <div class="btns-detalles">
+                    <a class="btn btn-cerrar btn-white" href="/logout">Cerrar sesion</a>
+                </div>
+                <% if(user.rol == 'admin'){ %>
+                    <div class="btns-admin">
+                        <h3>Gestion</h3>
+                        <a class="btn btn-white" href="/producto/gestion">Productos</a>
+                        <a class="btn btn-dark" href="/categoria">Categorias</a>
+                        <a class="btn btn-white" href="/pedido/gestion">Pedidos</a>
+                        <% if(user.email == 'david@david.com'){ %>
+                            <a class="btn btn-dark" href="/signup/admin">New admin</a>
+                        <% }else{ %>
+                            <p>Opcion no disponible para modo vista</p>
+                            <p style="padding-bottom: 10px;" class="btn btn-dark">New admin</p>
+                        <% } %>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</main>
+
+<%- include('partials/footer') %>

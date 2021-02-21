@@ -1,0 +1,119 @@
+<%- include('../partials/head1') %>
+    <link rel="stylesheet" href="/css/pedidos_detalle.css">
+    <%- include('../partials/head2') %>
+
+<% if(user.rol == 'admin'){ %>
+    <h2 style="text-align: center; padding-top: 20px;">Usuario</h2>
+    <div class="table">
+        <div class="id">
+            <h4>Id</h4>
+            <p><%= usuario.id %></p>
+        </div>
+        <div class="name">
+            <h4>Nombre</h4>
+            <p><%= usuario.name %> <%= usuario.lastname %></p>
+        </div>
+        <div class="email">
+            <h4>Email</h4>
+            <p><%= usuario.email %></p>
+        </div>
+    </div>
+<% } %>
+
+<div class="pedido-detalle">
+    <h2>Detalles del pedido</h2>
+    <div class="grid-2">
+        <div class="card">
+            <div class="detalle">
+                <div class="cursive header-detalles">
+                    <h3>Fecha</h3>
+                    <p>
+                        <%= pedido.fecha %>
+                    </p>
+                </div>
+                <div class="mini-card cantidad">
+                    <h3>Cantidad</h3>
+                    <p>
+                        <%= pedido.cantidad_productos %>
+                    </p>
+                </div>
+                <div class="mini-card costo">
+                    <h3>Costo</h3>
+                    <p>
+                        $<%= pedido.costo %>
+                    </p>
+                </div>
+                <div class="mini-card estado">
+                    <% if(user.rol == 'admin'){ %>
+                        <h3>Estado</h3>
+                        <p _id="<%= pedido.id %>" id="estado">
+                            <%= pedido.estado %>
+                        </p>
+                    <% }else{ %>
+                        <h3>Estado</h3>
+                        <p>
+                            <%= pedido.estado %>
+                        </p>
+                    <% } %>
+                </div>
+    
+                <div class="cursive padding10 t-direccion">
+                    <h3>Direccion del pedido</h3>
+                </div>
+                <div class="mini-card provincia">
+                    <h3>Provincia</h3>
+                    <p>
+                        <%= pedido.provincia %>
+                    </p>
+                </div>
+                <div class="mini-card ciudad">
+                    <h3>Ciudad</h3>
+                    <p>
+                        <%= pedido.ciudad %>
+                    </p>
+                </div>
+                <div class="mini-card direccion">
+                    <h3>Direccion</h3>
+                    <p>
+                        <%= pedido.direccion %>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="mis-products">
+            <h2 class="text-productos">Productos</h2>
+            <% productos.forEach(producto => { %>
+                <div class="productos">
+                    <img src="<%= producto.imagen %>" alt="<%= producto.name %>">
+                    <div class="mini-detalles">
+                        <div class="item">
+                            <h4>Nombre</h4>
+                            <p><%= producto.name %></p>
+                        </div>
+                        <div class="item">
+                            <h4>Precio Ind</h4>
+                            <p>$<%= producto.precio %></p>
+                        </div>
+                        <div class="item">
+                            <h4>Unidades</h4>
+                            <p><%= producto.cantidad %></p>
+                        </div>
+                        <div class="item">
+                            <h4>Total</h4>
+                            <p>$<%= producto.costo %></p>
+                        </div>
+                    </div>
+                    <div class="descripcion-detalles">
+                        <p><%= producto.descripcion %></p>
+                    </div>
+                </div> 
+            <% }); %>
+        </div>
+    </div>
+</div>
+
+<% if(user.rol == 'admin'){ %>
+    <script src="/js/pedido.js"></script>
+<% } %>
+
+<%- include('../partials/footer') %>

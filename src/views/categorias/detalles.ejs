@@ -1,0 +1,30 @@
+<%- include('../partials/head1') %>
+<link rel="stylesheet" href="/css/categorias.css">
+<link rel="stylesheet" href="/css/productos.css">
+<style>.header{ height: 150px; }</style>
+<%- include('../partials/head2') %>
+
+<div class="productos_categoria">
+    <% if(categoria){ %>
+        <h3>Productos de la categoria: <%= categoria.name %></h3>
+        <% if(productos[0]){ %>
+            <div class="container">
+                <% productos.forEach(producto => { %>
+                    <section class="card">
+                        <a style="padding: 0;" href="/producto/<%= producto.id %>"><img src="<%= producto.imagen %>" alt="<%= producto.name %>"></a>
+                        <a class="black" href="/producto/<%= producto.id %>">
+                            <h3><%= producto.name %></h3>
+                            <p>$<%= producto.precio %></p>
+                        </a>
+                    </section>
+                <% }); %>
+            </div>
+        <% }else{ %>
+            <h3>No hay productos de esta categoria</h3>
+        <% } %>
+    <% }else{ %>
+        <h3>La categoria '<%= name %>' no existe</h3>
+    <% } %>
+</div>
+
+<%- include('../partials/footer') %>

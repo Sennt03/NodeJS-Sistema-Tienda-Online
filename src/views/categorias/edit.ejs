@@ -1,0 +1,22 @@
+<%- include('../partials/head1') %>
+<link rel="stylesheet" href="/css/categorias.css">
+<%- include('../partials/head2') %>
+
+<div class="edit">
+    <% if(categoria){ %>
+        <h3>Editar nombre de categoria: <%= categoria.name %></h3>
+        <%- include('../partials/message') %>
+        <form action="/categoria/edit/<%= categoria.id %>" method="POST">
+            <div class="i-input">
+                <i style="color: #4d4d4e;" class="fas fa-link"></i>
+                <input type="text" name="name" placeholder="Nombre" value="<%= categoria.name %>">                    
+            </div>
+        <input type="submit" value="Guardar" class="btn btn-dark">
+        <a href="/categoria" class="btn btn-white">Cancelar</a>
+        </form>
+    <% }else{ %>
+        <h3>La categoria no existe</h3>
+    <% } %>
+</div>
+
+<%- include('../partials/footer') %>

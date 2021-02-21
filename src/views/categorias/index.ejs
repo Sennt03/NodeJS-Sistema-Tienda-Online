@@ -1,0 +1,45 @@
+<%- include('../partials/head1') %>
+<link rel="stylesheet" href="/css/categorias.css">
+<%- include('../partials/head2') %>
+
+<div class="categorias">
+    <h3>Gestionar categorias</h3>
+        <h3 id="alert-ok">Eliminada correctamente</h3>
+        <h4 id="noCategorys" style="text-align: center; color: #f50707;"></h4>
+        <% if(categorias.length <= 0){ %>
+            <h4 id="noCategoryEjs" style="text-align: center; color: #f50707;">No hay categorias, !Añade una¡</h4>
+        <% } %> 
+        <%- include('../partials/message') %>
+    <div id="gestion-categorias" class="gestion-categorias">
+        <div id="table-categorias" class="table-categorias">
+        <% if(categorias.length > 0){ %>
+                <h3>Id</h3>
+                <h3>Nombre</h3>
+                <h3>Editar</h3>
+                <h3>Eliminar</h3>
+    
+                <% categorias.forEach(categoria => { %>
+                        <p><%= categoria.id %></p>
+                        <p><%= categoria.name %></p>
+                        <a href="/categoria/edit/<%= categoria.id %>" class="btn btn-edit"><i class="fas fa-pen"></i></a>
+                        <p _id="<%= categoria.id %>" class="delete btn btn-delete"><i _id="<%= categoria.id %>" class="delete fas fa-trash-alt"></i></p>
+                <% }); %>
+        <% } %>
+        </div>
+        <div class="add-categoria">
+            <h3>Añadir categoria</h3>
+            <p id="añadiendo"></p>
+            <form id="add-categoria">
+                <div class="i-input">
+                    <i style="color: #4d4d4e;" class="fas fa-link"></i>
+                    <input id="name-new-category" type="text" name="name" placeholder="Nombre">                    
+                </div>
+                <input type="submit" value="Añadir" class="btn btn-dark">
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/js/categorias.js"></script>
+
+<%- include('../partials/footer') %>

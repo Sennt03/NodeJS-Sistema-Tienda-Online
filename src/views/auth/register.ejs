@@ -1,0 +1,40 @@
+<%- include('../partials/head1') %>
+<link rel="stylesheet" href="/css/auth.css">
+<%- include('../partials/head2') %>
+
+<section class="auth">
+    <form action="/signup" method="POST">
+        <h2>Registrarme</h2>
+        <%- include('../partials/message') %>
+        <div class="i-input">
+            <i style="color: #251d71;" class="fas fa-user-alt"></i>
+            <input type="text" name="username" placeholder="Nombre">
+        </div>
+
+        <div class="i-input">
+            <i style="color: #251d71;" class="fas fa-user"></i>
+            <input type="text" name="apellido" placeholder="Apellido">
+        </div>
+
+        <div class="i-input">
+            <i style="color: #d01c1c;" class="fas fa-envelope"></i>
+            <input type="email" name="email" placeholder="Email">
+        </div>
+        
+        <div class="i-input">
+            <i style="color: #4d4d4e;" class="fas fa-unlock"></i>
+            <input type="password" name="password" placeholder="Password">
+        </div>
+        
+        <div class="i-input">
+            <i style="color: #4d4d4e;" class="fas fa-lock"></i>
+            <input type="password" name="password" placeholder="Confirm Password">
+        </div>
+        
+        <input type="submit" value="Registrarme">
+
+        <a href="/signin">¿Ya tienes cuenta? Inicia sesion aqui</a>
+    </form>
+</section>
+
+<%- include('../partials/footer') %>

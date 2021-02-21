@@ -1,0 +1,26 @@
+<%- include('../partials/head1') %>
+<link rel="stylesheet" href="/css/auth.css">
+<%- include('../partials/head2') %>
+
+<section class="auth">
+    <form action="/signin" method="POST">
+        <h2>Login</h2>
+        <%- include('../partials/message') %>
+        <div class="i-input">
+            <i style="color: #d01c1c;" class="fas fa-envelope"></i>
+            <input type="email" name="email" placeholder="Email">
+        </div>
+        
+        <div class="i-input">
+            <i style="color: #4d4d4e;" class="fas fa-lock"></i>
+            <input type="password" name="password" placeholder="Password">
+        </div>
+        
+
+        <input type="submit" value="Ingresar">
+
+        <a href="/signup">¿No tienes cuenta? Registrate aqui</a>
+    </form>
+</section>
+
+<%- include('../partials/footer') %>

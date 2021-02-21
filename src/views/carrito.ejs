@@ -1,0 +1,36 @@
+<%- include('partials/head1') %>
+    <link rel="stylesheet" href="/css/carrito.css">
+<%- include('partials/head2') %>
+
+<main style="font-family: helvetica;">
+    <div class="text-carrito">
+        <div class="cont-carrito">
+            <h3>Carrito</h3>
+            <p id="precio-total">Precio total: $<%= costo_total %></p>
+            <a id="limpiar" class="btn btn-cancelar">Limpiar</a>
+            <a href="/pedido" class="btn btn-continuar">Comprar</a>
+        </div>
+    </div>
+
+    <% if(carrito){ %>
+        <% if(carrito.length > 0){ %>
+            <div id="modify-carrito" class="productos">
+                <% carrito.forEach(producto => { %>
+                    <div class="card">
+                        <img src="<%= producto.producto.imagen %>" alt="<%= producto.producto.name %>">
+                        <div class="info-product"><a href="/producto/<%= producto.producto.id %>"><%= producto.producto.name %></a></div>
+                        <p class="p-unidades"><span mas="<%= producto.producto_id %>" style="color: #0be60b;"><i mas="<%= producto.producto_id %>" class="fas fa-plus-square"></i></span><span>Unidades: <span id="<%= producto.producto_id %>"><%= producto.unidades %></span></span><span menos="<%= producto.producto_id %>" style="color: #ff0000;"><i menos="<%= producto.producto_id %>" class="fas fa-minus-square"></i></span></p>
+                        <span id="<%= producto.producto_id %>2">$<%= producto.unidades * producto.precio %></span>
+                    </div>
+                <% }); %>
+            </div>
+        <% }else{ %>
+            <h3 style="text-align: center;">El carrito esta vacio !Añade algun producto¡</h3>
+        <% } %>
+    <% }else{ %>
+        <h3 style="text-align: center;">El carrito esta vacio !Añade algun producto¡</h3>
+    <% } %>
+</main>
+
+<script src="/js/carrito2.js"></script>
+<%- include('partials/footer') %>

@@ -1,0 +1,32 @@
+<!--FONT AWESOMW-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+<!-- GOOGLE FONTS -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+<h1 class="title-header">
+    <a style="color: #fff;" href="/">SenntShop<span>.com</span></a>
+</h1>
+
+<div class="cuenta-carrito">
+    <a class="white" href="/info">
+        <h3><i class="fas fa-star"></i> Info</h3>
+    </a>
+    <a class="white" href="/cuenta">
+        <h3><i class="fas fa-user-alt"></i> Cuenta</h3>
+    </a>
+    <a class="white" href="/carrito">
+        <h3 class="d-relative"><i class="fas fa-shopping-cart"></i>
+            <% if(total){ %>
+                <div id="cont-carrito" class="circle-red"><%= total %></div> Carrito
+            <% }else{ %>
+                <div id="cont-carrito" class="circle-red">0</div> Carrito
+            <% } %>
+        </h3>
+    </a>
+</div>
+</header>

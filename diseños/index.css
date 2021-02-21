@@ -1,0 +1,86 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* GENERAL */
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+
+/* HEADER */
+
+.header{
+    background: #0F2027;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2c5364ab, #203a438e, #0f2027ab);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2c5364ab, #203a438e, #0f2027ab), url(./layout/img/fondo.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 150px;
+}
+
+.title-header{
+    padding: 20px;
+    color: #f2f2f2;
+    font-size: 35px;
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+.title-header span{
+    color: #e09408;
+}
+
+.cuenta-carrito{
+    display: flex;
+    width: 100%;
+    color: #ffffff;
+    justify-content: space-evenly;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+}
+
+.cuenta-carrito h3{
+    padding: 5px;
+}
+
+
+.d-relative{
+    position: relative;
+}
+
+.white{
+    color: #f2f2f2;
+}
+
+.cuenta-carrito .d-relative div{
+    position: absolute;
+    min-width: 25px;
+    top: -6px;
+    left: -5px;
+    background: #ff0000ba;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    font-size: 20px;
+    padding: 1px;
+}
+
+
+@media(min-width: 1024px){
+    .title-header{
+        margin-left: 10vw;
+    }
+}

@@ -1,0 +1,62 @@
+<%- include('../partials/head1') %>
+<link rel="stylesheet" href="/css/gestion_products.css">
+<%- include('../partials/head2') %>
+
+<div class="edit">
+    <% if(producto){ %>
+        <div class="edit-producto">
+            <h3>Editar producto: <%= producto.name %></h3>
+            <%- include('../partials/message') %>
+            <form action="/producto/edit/<%= producto.id %>" method="POST" enctype="multipart/form-data" id="edit-producto">
+                <div class="i-input">
+                    <i style="color: #4d4d4e;" class="fas fa-link"></i>
+                    <input name="name" id="name" type="text" placeholder="Nombre" value="<%= producto.name %>">
+                </div>
+
+                <div class="i-input">
+                    <i style="color: #4d4d4e;" class="fas fa-link"></i>
+                    <input name="descripcion" id="descripcion" type="text" placeholder="Descripcion" value="<%= producto.descripcion %>">
+                </div>
+
+                <div class="i-input">
+                    <i style="color: #4d4d4e;" class="fas fa-link"></i>
+                    <input name="precio" id="precio" type="number" placeholder="Precio" value="<%= producto.precio %>">
+                </div>
+
+                <div class="i-input">
+                    <i style="color: #4d4d4e;" class="fas fa-link"></i>
+                    <input name="stock" id="stock" type="number" placeholder="Stock" value="<%= producto.stock %>">
+                </div>
+                
+                <div class="i-input">
+                    <i style="color: #4d4d4e;" class="fas fa-link"></i>
+                    <input type="text" disabled placeholder="Categoria">
+                    <select name="categoria" id="categoria_product">
+                        <% categorias.forEach(categoria => { %>
+                            <% if(producto.categoria_id == categoria.id){ %>
+                                <option selected value="<%= categoria.id %>"><%= categoria.name %></option>
+                            <% }else{ %>
+                                <option value="<%= categoria.id %>"><%= categoria.name %></option>
+                            <% } %>
+                        <% }); %>
+                    </select>
+                </div>
+                
+                <img class="img-edit" src="<%= producto.imagen %>" alt="<%= producto.name %>">
+                <div class="custom-input-file col-md-6 col-sm-6 col-xs-6">
+                    <input name="imagen" type="file" id="fichero-tarifas" class="input-file" value="">
+                    Seleccionar imagen
+                </div>
+
+                <p id="añadiendo"></p>
+
+                <input type="submit" value="Editar producto" class="btn btn-dark btn-enviar">
+            </form>
+            <a href="/producto/gestion" class="btn btn-white">Cancelar</a>
+        </div>
+    <% }else{ %>
+        <h3>El producto no existe</h3>
+    <% } %>
+</div>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,58 @@
+<%- include('../partials/head1') %>
+<link rel="stylesheet" href="/css/gestion_products.css">
+<%- include('../partials/head2') %>
+
+<div class="productos">
+    <h3>Gestionar productos</h3>
+    <h4 style="text-align: center; color: #f70606;" id="message"></h4>
+    <%- include('../partials/message') %>
+    <div id="gestion-productos">
+        <div id="table-productos">
+            
+        </div>
+        <div class="add-producto">
+            <h3>Añadir producto</h3>
+            <form action="/producto/add" method="POST" enctype="multipart/form-data" id="add-producto">
+                <div class="i-input">
+                    <i style="color: #4d4d4e;" class="fas fa-link"></i>
+                    <input name="name" type="text" placeholder="Nombre">                    
+                </div>
+
+                <div class="i-input">
+                    <i style="color: #4d4d4e;" class="fas fa-link"></i>
+                    <input name="descripcion" type="text" placeholder="Descripcion">                    
+                </div>
+
+                <div class="i-input">
+                    <i style="color: #4d4d4e;" class="fas fa-link"></i>
+                    <input name="precio" type="number" placeholder="Precio">                    
+                </div>
+
+                <div class="i-input">
+                    <i style="color: #4d4d4e;" class="fas fa-link"></i>
+                    <input name="stock" type="number" placeholder="Stock">                    
+                </div>
+                
+                <div class="i-input">
+                    <i style="color: #4d4d4e;" class="fas fa-link"></i>
+                    <input type="text" disabled placeholder="Categoria">                    
+                    <select name="categoria" id="categoria_product">
+                        <% categorias.forEach(categoria => { %>
+                            <option value="<%= categoria.id %>"><%= categoria.name %></option>
+                        <% }); %>
+                    </select>
+                </div>
+                
+                <div class="custom-input-file col-md-6 col-sm-6 col-xs-6">
+                    <input name="imagen" type="file" id="fichero-tarifas" class="input-file" value="">
+                    Subir imagen
+                </div>
+
+                <input type="submit" value="Añadir producto" class="btn btn-dark btn-enviar">
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/js/productos.js"></script>
+<%- include('../partials/footer') %>

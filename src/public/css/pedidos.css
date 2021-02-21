@@ -1,0 +1,50 @@
+#confirm-pedido{
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0 0 3px 0 #ccc;
+    font-family: helvetica;
+}
+
+#confirm-pedido h2{
+    text-align: center;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+}
+
+#confirm-pedido input[type="submit"]{
+    width: 80%;
+    display: block;
+    margin: 20px auto;
+    padding: 7px;
+    outline: none;
+    border: none;
+    color: #fff;
+    background: #000;
+    cursor: pointer;
+}
+
+#confirm-pedido input[type="text"], #confirm-pedido input[type="email"], #confirm-pedido input[type="password"]{
+    display: block;
+    width: 100%;
+    margin: 0px 0;
+    color: rgb(66 65 65);
+    border: none;
+    outline: none;
+    padding: 0 10px;
+}
+
+#confirm-pedido i{
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    padding: 0 5px;
+    border-right: 1px solid #ccc;
+}
+
+.i-input{
+    display: flex;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
