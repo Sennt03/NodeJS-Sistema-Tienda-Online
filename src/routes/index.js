@@ -4,7 +4,7 @@ const router = Router()
 const db = require('../database')
 
 router.get('/', async (req, res) => {
-    console.log(process.env.A)
+    
     const categorias = await db.query('SELECT * FROM categorias')
     const productos = await db.query('SELECT * FROM productos ORDER BY RAND()')
     
