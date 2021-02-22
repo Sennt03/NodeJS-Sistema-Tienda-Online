@@ -3,7 +3,7 @@ const URL = 'https://senntshop.herokuapp.com/categoria/'
 // CLASES
 class UI{
     async refresh(){
-        const res = await fetch(URL+'getAll')
+        const res = await fetch(URL+'get/All')
         const categorias = await res.json()
         
             const table = document.getElementById('table-categorias')

@@ -55,7 +55,7 @@ router.get('/:name', async (req, res) => {
 
 
 // API
-router.get('/getAll', async (req, res) => {
+router.get('/get/All', async (req, res) => {
     const rows = await db.query('SELECT * FROM categorias ORDER BY id DESC')
     if(rows[0]){
         res.send(rows)
