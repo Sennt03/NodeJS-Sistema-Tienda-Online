@@ -9,6 +9,7 @@ Contiene:
 * Añadir productos al carrito
 * Hacer pedidos
 * Login / Register
+* Etc
 ### Administrador
 * Gestion de categorias (añadir, editar, eliminar)
 * Gestion de productos (añadir, editar, eliminar)
