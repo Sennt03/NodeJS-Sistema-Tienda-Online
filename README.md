@@ -1,5 +1,5 @@
 # SenntShop
-Sistema de tienda online con NodeJS, JavaScript moderno async/await y subida de imagenes a cloudinary
+Sistema de tienda online con NodeJS, JavaScript moderno async/await y subida de imagenes a cloudinary.
 
 Contiene: 
 ### Usuario
