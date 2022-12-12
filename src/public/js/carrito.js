@@ -1,4 +1,4 @@
-const URL = 'https://senntshop.herokuapp.com/carrito/'
+const URL = '/carrito/'
 
 class UI{
     refresh(){

@@ -1,4 +1,4 @@
-const URL = 'https://senntshop.herokuapp.com/'
+const URL = '/'
 
 class UI{
     async buscar(){

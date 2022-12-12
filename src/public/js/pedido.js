@@ -1,4 +1,4 @@
-const URL = 'https://senntshop.herokuapp.com/pedido/'
+const URL = '/pedido/'
 
 async function cambiarEstado(id){
     const estado = document.getElementById('estado')

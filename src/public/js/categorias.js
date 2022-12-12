@@ -1,4 +1,4 @@
-const URL = 'https://senntshop.herokuapp.com/categoria/'
+const URL = '/categoria/'
 
 // CLASES
 class UI{

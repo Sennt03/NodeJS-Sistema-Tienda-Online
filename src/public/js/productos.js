@@ -1,4 +1,4 @@
-const URL = 'https://senntshop.herokuapp.com/producto/'
+const URL = '/producto/'
 
 class UI{
     async refresh(){

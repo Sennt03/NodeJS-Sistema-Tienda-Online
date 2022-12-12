@@ -6,6 +6,7 @@ const flash = require('connect-flash')
 const { database } = require('./keys')
 const passport = require('passport')
 const multer = require('multer')
+const cors = require('cors')
 
 if(process.env.NODE_ENV != 'production'){
     require('dotenv').config()
@@ -41,6 +42,7 @@ app.use(multer({
 app.use(flash())
 app.use(passport.initialize())
 app.use(passport.session())
+app.use(cors())
 
 // Variables Globales
 app.use((req, res, next) => {
