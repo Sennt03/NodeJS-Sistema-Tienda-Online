@@ -8,9 +8,9 @@ const passport = require('passport')
 const multer = require('multer')
 const cors = require('cors')
 
-if(process.env.NODE_ENV != 'production'){
+// if(process.env.NODE_ENV != 'production'){
     require('dotenv').config()
-}
+// }
 
 // Inicializaciones
 const app = express()
