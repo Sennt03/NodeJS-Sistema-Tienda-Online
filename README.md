@@ -16,4 +16,4 @@ Contiene:
 * Gestion de pedidos
 * Crear nueva cuenta administradora
 
-Link: [SenntShop.com](https://senntshop.up.railway.app)
+Link: https://shop.david-ruiz.online
